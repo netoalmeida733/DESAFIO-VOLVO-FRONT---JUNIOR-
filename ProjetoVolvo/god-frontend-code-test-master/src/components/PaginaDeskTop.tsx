@@ -9,9 +9,9 @@ interface PaginaDeskTopProps {
 export default function PaginaDeskTop({onClickLeft , onClickRight }: PaginaDeskTopProps){
 	return(
 		<div className={styles.btnWrapper}>
-			<button onClick={onClickLeft} ><ChevronLeft /></button>
-			<button  onClick={onClickRight}> <ChevronRight /></button>
-		</div>
+			<button  className={styles.button} onClick={onClickLeft} ><ChevronLeft  size={18} /></button>
+			<button className={styles.button} onClick={onClickRight}> <ChevronRight size={18} /></button>
+			</div>
 	);
 } 
 

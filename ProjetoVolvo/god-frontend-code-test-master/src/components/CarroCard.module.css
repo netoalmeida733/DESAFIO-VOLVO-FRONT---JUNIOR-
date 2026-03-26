@@ -1,54 +1,228 @@
+/* === WRAPPER GERAL DA SEÇÃO === */
+.homeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centraliza horizontalmente */
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* === CONTAINER DO CAROUSEL (fundo cinza) === */
+.cardsWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 980px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  background: #c8c8c8;
+}
+
+.cardsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* === CARD INDIVIDUAL === */
 .cardWrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	min-width: 300px;
-}
-.homeWrapper{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	max-width: 100%;
-	width: 100%;
-	height: 100%;
-}
-.cardsWrapper{	
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-start;
-	max-width: 80%;
-	width: 100%;
-	gap: 24px;
-	padding-left: 16px;
-	/*faz com que suma o scrool lateral*/
-	overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-}
-
-.spacer {
-	height: 24px;
-	width: 100%; 
-}
-
-.btnWrapper {
-  display: flex;
-  gap: 10px;
-  background: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  display: flex;
+   display: flex;
+  flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;        /* ocupa tudo */
+  min-height: 420px;
+   padding: 60px 60px 40px 60px;
+  --bg1: #dcdcdc;
+  --bg2: #c8c8c8;
+  --bg3: #b5b5b5;
+
+  background: linear-gradient(
+    135deg,
+    var(--bg1) 0%,
+    var(--bg2) 40%,
+    var(--bg3) 100%
+  );
+
+  transition: background 0.6s ease;
+  overflow: hidden;
 }
 
+
+.cardWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 60%,
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+/* === CONTEÚDO TEXTO (esquerda) === */
+.cardContent {
+   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative; /* remove o absoluto */
+  margin-bottom: auto;           /* canto esquerdo */
+  z-index: 2;
+}
+
+.cardBodyType {
+  font-size: 0.95rem;
+  color: #6b6b6b;
+  margin-bottom: 2px;
+}
+
+.cardModelName {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #141414;
+  line-height: 1.1;
+}
+
+.cardModelType {
+  font-size: 1.5rem;
+  color: #6b6b6b;
+  margin-bottom: 24px;
+}
+
+/* === IMAGEM DO CARRO === */
+.cardImage {
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  height: 85%;
+  max-height: 360px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* === LINKS SHOP / LEARN === */
+.cardLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: auto;
+  padding-bottom: 24px;
+  z-index: 2;
+}
+
+/* === BOTÕES DE NAVEGAÇÃO === */
+.btnWrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  z-index: 10;
+}
+
+.button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+   background: rgba(0, 0, 0, 0.25);   /* preto bem suave */
+  backdrop-filter: blur(4px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.7s ease;
+}
 
 .button:hover {
-  background: #eee;
+  background: #ffffff;
+}
+
+/* === SPACER === */
+.spacer {
+  height: 24px;
+  width: 100%;
+}
+.cardImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 85%;
+  object-fit: contain;
+  background: transparent;
+  z-index: 1;
+   mix-blend-mode: multiply;
+}
+
+/* === ANIMAÇÕES DE TRANSIÇÃO === */
+.slideEnter {
+  transform: translateX(300px) scale(0.75);
+  opacity: 0.5;
+  z-index: 1;
+}
+.slideHidden {
+  display: none;
+}
+.slideActive {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.6s ease,
+              scale 0.6s ease;
+}
+
+.slideExit {
+  transform: translateX(-300px) scale(0.75);
+  opacity: 0.5;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.6s ease;
+}
+
+/* === CARRO DO PRÓXIMO SLIDE (peek à direita) === */
+.nextCarPreview {
+  position: absolute;
+  left: -80px;        /* lado esquerdo, não direito */
+  bottom: 0;
+  height: 55%;        /* menor, mais "atrás" */
+  object-fit: contain;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 45px;
+  left: 17%;
+  width: 80%;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.progressFill {
+  height: 100%;
+  width: 100%;
+  background: black;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.slideActive .progressFill {
+  animation: progressAnim 3s linear forwards;
+}
+
+@keyframes progressAnim {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
