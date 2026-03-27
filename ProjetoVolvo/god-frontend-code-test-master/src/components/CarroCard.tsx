@@ -13,6 +13,9 @@ export function CarroCard({ car }: CardProps) {
 		     "--bg1": car.bg1 || "#dcdcdc",
    		     "--bg2": car.bg2 || "#c8c8c8",
     	     "--bg3": car.bg3 || "#b5b5b5",
+    	     "--bg4": car.bg1 || "#e0e0e0",
+	 		 "--bg5": car.bg2 || "#9e9e9e",
+	 		 "--bg6": car.bg3 || "#616161"
 		  } as React.CSSProperties
 		  }>
 			{/*RESPONSAVEL PELA CATEGORIA DOS CARROS*/}

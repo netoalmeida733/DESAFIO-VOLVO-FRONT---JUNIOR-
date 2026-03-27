@@ -8,4 +8,5 @@ export interface Car {
     bg1?: string;
     bg2?: string;
     bg3?: string;
+  
 }

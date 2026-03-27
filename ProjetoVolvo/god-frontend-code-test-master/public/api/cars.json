@@ -7,6 +7,18 @@
       "modelType": "A partir de R$ 239.950",
       "imageUrl": "https://wizz.volvocars.com/images/2025/356/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_8BC35145A17E3CD19BF7B1CE52078CF3C74B93DE.png?client=car-configurator&w=3840"
     },
+     {
+      "id": "xc60-recharge",
+      "modelName": "XC60 ", 
+      "bodyType": "SUV Moderno",
+      "modelType": "A partir de R$ 159.950",
+      "imageUrl": "https://wizz.volvocars.com/images/2026/246/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_02BDE37C64C20B795C8CD5F2DF522DD493AADE9A.png?client=car-configurator&w=3840",
+   	
+   	  "bg1": "#e8ecef",
+	  "bg2": "#cfd8dc",
+	  "bg3": "#90a4ae"
+   
+    },
     {
       "id": "xc40-recharge",
       "modelName": "EX90", 
@@ -14,8 +26,20 @@
       "modelType": "A partir de R$ 849.950",
       "imageUrl": "https://wizz.volvocars.com/images/2025/356/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_7A0701CC96FEA4509A29F16D0E07BE71E77090E1.png?client=model-comparison&w=3840",
    
-	  "bg1": "#e8ecef",
-	  "bg2": "#cfd8dc",
-	  "bg3": "#90a4ae"
+	  "bg1": "#e0e0e0",
+	  "bg2": "#9e9e9e",
+	  "bg3": "#616161"
+    },
+    {
+       "id": "xc60-recharge",
+      "modelName": "EC40 ", 
+      "bodyType": "SUV Compacto",
+      "modelType": "A partir de R$ 334.950",
+      "imageUrl": "https://wizz.volvocars.com/images/2026/539/exterior/studioProportional/left/transparent_exterior-studioProportional-left_F069D2E30A9029784D253020B8F4EF35125877BB.png?client=car-configurator&w=3840",
+   	
+   	 "bg1": "#fff5f7",
+	 "bg2": "#ffe4ea",
+	 "bg3": "#fbc2cf"
+   
     }
 ]

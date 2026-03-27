@@ -18,7 +18,6 @@ export const HelloWorld: React.FC = () => {
     if (!cardList) return;
     cardList.scrollBy({ left: -300, behavior: "smooth" });
 
-    // ADICIONAR
     if (animating) return;
     setAnimating('left');
     setTimeout(() => {
@@ -32,7 +31,6 @@ export const HelloWorld: React.FC = () => {
     if (!cardList) return;
     cardList.scrollBy({ left: 300, behavior: "smooth" });
 
-    // ADICIONAR
     if (animating) return;
     setAnimating('right');
     setTimeout(() => {
@@ -42,6 +40,7 @@ export const HelloWorld: React.FC = () => {
   };
 
   return (
+  
     <div className={styles.homeWrapper}>
 
       <Text variant='cook'>Modelos em destaque</Text>
@@ -51,7 +50,7 @@ export const HelloWorld: React.FC = () => {
       <div className={styles.cardsWrapper} id="card-list">
 
         {cars.map((car, index) => (
-          // ADICIONAR: wrapper com classe de anima��o em volta do CarroCard
+          // ADICIONAR: wrapper com classe de animacao em volta do CarroCard
           <div
             key={car.id}
             className={
